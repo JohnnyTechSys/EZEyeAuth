@@ -775,7 +775,7 @@ wheels = [
 
 [[package]]
 name = "open-iris"
-version = "1.11.1"
+version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "huggingface-hub" },
@@ -787,26 +787,26 @@ dependencies = [
     { name = "pydantic" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ff/6a/8c0de1ab507df239d2c176028718d6fbb5fb27ddc9cf41c6908688431b40/open_iris-1.11.1.tar.gz", hash = "sha256:55b735c97cdc9e7572800594e029bc9a353c2b7f6819128e5157949f550fb3cb", size = 101784, upload-time = "2026-03-31T14:08:47.407Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2d/3a/3c5d6ead10da276b86f28338a857e663bc33f804c45ff9bdc7d27e7dcb32/open-iris-1.0.0.tar.gz", hash = "sha256:136cea786891c77bbde498b6765d15f42bb9072027d2a58874d6911f2938d9ff", size = 71350, upload-time = "2023-12-14T12:27:13.346Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/32/a214991d00f482d6f839fb4c00ca314ecebd3f43eb3beaf2292dc67aec01/open_iris-1.11.1-py3-none-any.whl", hash = "sha256:603733dbc5a4415baebda679e36bdf9a8fe42d4046de50cc95d9192964533e6d", size = 135130, upload-time = "2026-03-31T14:08:46.344Z" },
+    { url = "https://files.pythonhosted.org/packages/ad/5d/70a9e5ea5630931048d3d101611888d167970b8c74a3924b9c6f915b514a/open_iris-1.0.0-py3-none-any.whl", hash = "sha256:e718209cbbd3989fd3a68cae6502422f0a1a1619084df6b01432a58a06ba272f", size = 91612, upload-time = "2023-12-14T12:26:38.717Z" },
 ]
 
 [[package]]
 name = "opencv-python"
-version = "4.7.0.68"
+version = "4.8.1.78"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/92/87e99adfaf9c847021ecfcd4bf2732c863752cf47c0c9ad349c8de260183/opencv-python-4.7.0.68.tar.gz", hash = "sha256:9829e6efedde1d1b8419c5bd4d62d289ecbf44ae35b843c6da9e3cbcba1a9a8a", size = 91094521, upload-time = "2022-12-30T05:34:06.226Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c0/52/9fe76a56e01078a612812b40764a7b138f528b503f7653996c6cfadfa8ec/opencv-python-4.8.1.78.tar.gz", hash = "sha256:cc7adbbcd1112877a39274106cb2752e04984bc01a031162952e97450d6117f6", size = 92094255, upload-time = "2023-09-28T11:10:40.539Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c9/fd/254d2833850270dc2379f0bd88ec94a02ed1ec7d8c13e70ff384fc48d05b/opencv_python-4.7.0.68-cp37-abi3-macosx_10_13_x86_64.whl", hash = "sha256:abc6adfa8694f71a4caffa922b279bd9d96954a37eee40b147f613c64310b411", size = 51719408, upload-time = "2022-12-30T05:34:08.914Z" },
-    { url = "https://files.pythonhosted.org/packages/be/12/6369d2b15422d4074d7aaf5332dcb0d590f8779020ba7135526ca6f49632/opencv_python-4.7.0.68-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:86f4b60b9536948f16d2170ba3a9b22d3955a957dc61a9bc56e53692c6db2c7e", size = 31086800, upload-time = "2022-12-30T05:34:28.061Z" },
-    { url = "https://files.pythonhosted.org/packages/95/48/cbfd6cc46e39f55e3045fc2a407e7d296e520510a2730cf48183b032a452/opencv_python-4.7.0.68-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6d1c993811f92ddd7919314ada7b9be1f23db1c73f1384915c834dee8549c0b9", size = 40382433, upload-time = "2022-12-30T05:33:32.297Z" },
-    { url = "https://files.pythonhosted.org/packages/07/e2/405fd71f433960b0ce6a546536b05a26d85508df7eea98850784e10323e9/opencv_python-4.7.0.68-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3a00e12546e5578f6bb7ed408c37fcfea533d74e9691cfaf40926f6b43295577", size = 61828134, upload-time = "2022-12-30T05:34:00.611Z" },
-    { url = "https://files.pythonhosted.org/packages/ab/f4/7e50e12161575c0bed7b072fc537a0b6fdee736aa49aaecddad9c6407d90/opencv_python-4.7.0.68-cp37-abi3-win32.whl", hash = "sha256:e770e9f653a0e5e72b973adb8213fae2df4642730ba1faf31e73a54287a4d5d4", size = 28237072, upload-time = "2022-12-30T05:33:16.268Z" },
-    { url = "https://files.pythonhosted.org/packages/80/5b/6eee3a1dc0f296904f44a13749f3b2cd29569c817aa931ead50c4d085d51/opencv_python-4.7.0.68-cp37-abi3-win_amd64.whl", hash = "sha256:7a08f9d1f9dd52de63a7bb448ab7d6d4a1a85b767c2358501d968d1e4d95098d", size = 38162934, upload-time = "2022-12-30T05:33:19.768Z" },
+    { url = "https://files.pythonhosted.org/packages/05/58/7ee92b21cb98689cbe28c69e3cf8ee51f261bfb6bc904ae578736d22d2e7/opencv_python-4.8.1.78-cp37-abi3-macosx_10_16_x86_64.whl", hash = "sha256:91d5f6f5209dc2635d496f6b8ca6573ecdad051a09e6b5de4c399b8e673c60da", size = 54739488, upload-time = "2023-09-28T11:00:22.939Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/f6/57de91ea40c670527cd47a6548bf2cbedc68cec57c041793b256356abad7/opencv_python-4.8.1.78-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:bc31f47e05447da8b3089faa0a07ffe80e114c91ce0b171e6424f9badbd1c5cd", size = 33127231, upload-time = "2023-09-28T11:00:31.878Z" },
+    { url = "https://files.pythonhosted.org/packages/c7/a5/dd3735d08c1afc2e801f564f6602392cd86cf59bcb5a6712582ad0610a22/opencv_python-4.8.1.78-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9814beca408d3a0eca1bae7e3e5be68b07c17ecceb392b94170881216e09b319", size = 41016265, upload-time = "2023-09-28T11:00:39.652Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/8a/b2f7e1a434d56bf1d7570fc5941ace0847404e1032d7f1f0b8fed896568d/opencv_python-4.8.1.78-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c4c406bdb41eb21ea51b4e90dfbc989c002786c3f601c236a99c59a54670a394", size = 61712178, upload-time = "2023-09-28T11:00:49.714Z" },
+    { url = "https://files.pythonhosted.org/packages/13/92/6f3194559d4e2a17826240f2466076728f4c92a2d124a32bfd51ca070019/opencv_python-4.8.1.78-cp37-abi3-win32.whl", hash = "sha256:a7aac3900fbacf55b551e7b53626c3dad4c71ce85643645c43e91fcb19045e47", size = 28281329, upload-time = "2023-09-28T11:00:57.464Z" },
+    { url = "https://files.pythonhosted.org/packages/38/d2/3e8c13ffc37ca5ebc6f382b242b44acb43eb489042e1728407ac3904e72f/opencv_python-4.8.1.78-cp37-abi3-win_amd64.whl", hash = "sha256:b983197f97cfa6fcb74e1da1802c7497a6f94ed561aba6980f1f33123f904956", size = 38065100, upload-time = "2023-09-28T11:01:04.856Z" },
 ]
 
 [[package]]
