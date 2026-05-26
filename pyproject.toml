@@ -1,6 +1,6 @@
 [project]
 name = "ezeyeauth"
-version = "2.0.0"
+version = "2.1.1"
 description = "Easy Iris Biometric Authtnication System"
 readme = "README.md"
 requires-python = ">=3.11"

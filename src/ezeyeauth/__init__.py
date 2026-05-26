@@ -14,6 +14,14 @@ class Authenticator():
     def _get_path(self, user_id, side):
         return os.path.join(self.storage_dir, f"{user_id}_{side}_template.iris")
 
+    def _preprocess_image(self, img):
+        if img is None:
+            return None
+        h, w = img.shape[:2]
+        target_w = 640
+        target_h = int(h * (target_w / w))
+        return cv2.resize(img, (target_w, target_h))
+
     def enroll(self, origin_left, origin_right, user_id="default"):
         if not isinstance(origin_left, str) or not isinstance(origin_right, str):
             raise ValueError("Origin must be a string path!")
@@ -23,11 +31,14 @@ class Authenticator():
         img_left_pixels = cv2.imread(origin_left, cv2.IMREAD_GRAYSCALE)
         img_right_pixels = cv2.imread(origin_right, cv2.IMREAD_GRAYSCALE)
 
+        img_left_pixels = self._preprocess_image(img_left_pixels)
+        img_right_pixels = self._preprocess_image(img_right_pixels)
+
         if img_left_pixels is None or img_right_pixels is None:
             raise ValueError("Failed to read one or both images. Ensure they are valid image files.")
 
-        left_template = self.pipeline(iris.IRImage(img_data=img_left_pixels, eye_side="left"))
-        right_template = self.pipeline(iris.IRImage(img_data=img_right_pixels, eye_side="right"))
+        left_template = self.pipeline.run(img_data=img_left_pixels, eye_side="left")
+        right_template = self.pipeline.run(img_data=img_right_pixels, eye_side="right")
 
         if left_template.get("error") is not None or right_template.get("error") is not None:
             raise ValueError("Failed to detect iris in one or both images.")
@@ -51,17 +62,23 @@ class Authenticator():
         img_left_pixels = cv2.imread(left_unknown, cv2.IMREAD_GRAYSCALE)
         img_right_pixels = cv2.imread(right_unknown, cv2.IMREAD_GRAYSCALE)
 
+        img_left_pixels = self._preprocess_image(img_left_pixels)
+        img_right_pixels = self._preprocess_image(img_right_pixels)
+
         if img_left_pixels is None or img_right_pixels is None:
             return False
 
-        left_res = self.pipeline(iris.IRImage(img_data=img_left_pixels, eye_side="left"))
-        right_res = self.pipeline(iris.IRImage(img_data=img_right_pixels, eye_side="right"))
+        left_res = self.pipeline.run(img_data=img_left_pixels, eye_side="left")
+        right_res = self.pipeline.run(img_data=img_right_pixels, eye_side="right")
 
         if left_res.get("error") is not None or right_res.get("error") is not None:
             return False
 
-        right_dist = self.matcher.run(right_known["iris_template"], right_res["iris_template"])
-        left_dist = self.matcher.run(left_known["iris_template"], left_res["iris_template"])
+        def dict_to_template(d):
+            return iris.IrisTemplate(iris_codes=[d["iris_codes"]], mask_codes=[d["mask_codes"]])
+
+        right_dist = self.matcher.run(dict_to_template(right_known["iris_template"]), dict_to_template(right_res["iris_template"]))
+        left_dist = self.matcher.run(dict_to_template(left_known["iris_template"]), dict_to_template(left_res["iris_template"]))
 
         if left_dist < 0.32 and right_dist < 0.32:
             return True # Irises match
